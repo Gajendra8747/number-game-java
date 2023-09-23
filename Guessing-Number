@@ -1,0 +1,65 @@
+package loops.CodSoftproject;
+
+import java.util.*;
+
+public class num_game 
+{
+    public static void number_Game_codsoft()
+    {
+      
+      // n is represent the total number of trials
+       int n = 10;           
+       int i ;                       
+       int Guess ;
+
+       // this is a scanner class
+        try (
+        Scanner sc = new Scanner(System.in)) {
+            int Number = 1+(int)( 100 * Math.random()); 
+            
+            System.out.println("chosen a number between 1 to 100");
+
+            System.out.println("Guess the number within 10 trial");
+
+            for( i=0; i<n; i++)
+            {
+                System.out.println("Guess the number");
+
+                  // take the input friom user
+                Guess = sc.nextInt();                                        
+
+                // if user guessed the number
+                if(Number==Guess)
+                {
+                   System.out.println(" Congratulations!" + "you guessed the number");
+                   break;
+                }
+
+                             // if user guess the number is greater then
+                else if(Number>Guess && i != n-1)
+                {
+                    System.out.println("The number is greater then : " + Guess) ;
+
+                }
+
+                //if user guess the number is less then
+                else if(Number<Guess && i != n-1)
+                {
+                    System.out.println("The number is less then : " + Guess);
+                }
+            } 
+                if(i==n)
+                {
+                    System.out.println("You have exhausted K trials.");
+                    System.out.println( "The number was " + Number);
+                }
+        }
+    }
+     
+    public static void main (String [] args)
+    {
+        number_Game_codsoft();                  // calling function
+
+    }
+
+}
