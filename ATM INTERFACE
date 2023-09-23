@@ -1,0 +1,75 @@
+package loops.CodSoftproject;
+import java.util.Scanner;
+
+public class ATM_INTERFACE 
+{
+    public static void main(String args [])
+    {   
+        // local variable
+        int Withdraw ;
+        int Deposit;
+        int Balance = 50000;
+
+        try (//create an object
+        Scanner sc = new Scanner(System.in)) {
+          while(true)
+          {
+
+            System.out.println("welcome to ATM");
+            System.out.println("choose 1 for withdraw");
+            System.out.println("choose 2 for Deposit");
+            System.out.println("choose 3 for Check Balance");
+            System.out.println("choose 4 for Exit");
+            System.out.println("choose An operation you want to perform ");
+
+
+
+           int User_choice = sc.nextInt();
+
+           // using conditions statement
+           switch(User_choice)                   
+              {
+               case 1:
+
+                  System.out.println("Enter money to be Withdraw");
+                  Withdraw = sc.nextInt();
+
+                if(Balance>=Withdraw)
+                     {
+                       Balance = Balance-Withdraw;
+                       System.out.println("please collect your momey");
+                      }
+               else
+                      {
+                       System.out.println("Insufficient balance");
+                      }
+              System.out.println();
+               break;
+              
+               case 2:
+
+               System.out.println("Enter money to be deposit");
+               Deposit = sc.nextInt();
+
+               Balance = Balance + Deposit ;
+               System.out.println("Your money has been successfully Deposited");
+
+               break;
+
+                case 3:
+
+               System.out.println("your balance is : " + Balance );
+
+                 break ;
+
+               case 4:
+
+               System.exit(0);
+              }
+  
+          }
+        }
+
+    }
+
+}
